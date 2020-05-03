@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@500&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.watch {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 2fr;
+  grid-template-rows: repeat(4, 1fr);
+  font-family: sans-serif;
+  width: 300px;
+  height: 100px;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+
+.watch > p {
+  /*border: 1px solid #333;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hour {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  font-size: 6rem;
+}
+
+#minute {
+  grid-column: 2 / 3;
+  grid-row: 1 / -2;
+  font-size: 3.5rem;
+}
+
+#second {
+  grid-column: 2 / 3;
+  grid-row: 4 / -1;
+  align-self: flex-start;
+  font-size: 0.5rem;
+}
+
+#date {
+  grid-column: 4 / -1;
+  grid-row: 1 / span 2;
+  font-size: 2.5rem;
+}
+
+#month {
+  grid-column: 4 / -1;
+  grid-row: 3 / span 2;
+  font-size: 1.5rem;
+}
+
+#day {
+  grid-row: span 4;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 2.5rem;
+  font-weight: 550;
+}
