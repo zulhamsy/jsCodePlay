@@ -20,15 +20,19 @@ function getEvents(logs) {
   let event = [];
   for(let log of logs) {
     for(let entry of log.events) {
-      if(!event.includes(entry)) {
-        event.push(entry);
-      }
+      if(!event.includes(entry)) event.push(entry);
     }
   }
   return event;
 }
 
+// function menghitung korelasi (pi) (just kidding)
+function pi(array) {
+  return array[0];
+}
+
 // console.log(getEvents(JOURNAL));
-for(event of getEvents(JOURNAL)) {
-  console.log(event+" "+tableFor(event, JOURNAL));
+
+for(let event of getEvents(JOURNAL)) {
+  console.log(`${event} ${pi(tableFor(event, JOURNAL))}`);
 }
