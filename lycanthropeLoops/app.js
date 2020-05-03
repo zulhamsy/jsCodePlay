@@ -13,4 +13,22 @@ function tableFor(event, log) {
   return table;
 }
 
-console.log(tableFor("pizza", JOURNAL));
+//console.log(tableFor("pizza", JOURNAL));
+
+// function untuk melist semua event
+function getEvents(logs) {
+  let event = [];
+  for(let log of logs) {
+    for(let entry of log.events) {
+      if(!event.includes(entry)) {
+        event.push(entry);
+      }
+    }
+  }
+  return event;
+}
+
+// console.log(getEvents(JOURNAL));
+for(event of getEvents(JOURNAL)) {
+  console.log(event+" "+tableFor(event, JOURNAL));
+}
