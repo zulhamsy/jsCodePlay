@@ -47,3 +47,8 @@ forEach(arr, x => console.log(x));
 
 // method forEach merupakan method standard
 arr.forEach(x => console.log(`Nilai ${x}`));
+arr.forEach(x => {
+  if(x%2 == 0) {
+    return console.log(`${x} is even`);
+  }
+});
