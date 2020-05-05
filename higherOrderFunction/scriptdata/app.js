@@ -17,6 +17,7 @@ let living = filter(SCRIPTS, x => x.living);
 console.log(SCRIPTS.filter(x=>x.year >= 1987));
 
 
+
 // Map Function 
 function map(array, func) {
   let result = [];
@@ -28,3 +29,21 @@ function map(array, func) {
 
 // me-mapping ke array baru agar yang muncul hanya nama saja
 console.log(map(living, x => x.name));
+
+// merupakan method standard array
+console.log(living.map(x => x.name));
+
+
+
+// forEach Function
+function forEach(array, func) {
+  for(element of array) {
+    func(element);
+  }
+}
+
+let arr = [0,1,2,3,4,5];
+forEach(arr, x => console.log(x));
+
+// method forEach merupakan method standard
+arr.forEach(x => console.log(`Nilai ${x}`));
