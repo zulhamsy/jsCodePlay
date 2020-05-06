@@ -86,6 +86,7 @@ function calc(arr) {
   },0) // perlu param 0 agar reduce mulai dari element ke 0
 }
 
+// ini adalah bentuk abstraksnya, memilih element a / b tergantung mana yg lebih besar rangenya, dimana rangenya dihitung dengan fungsi yang lebih spesifik (calc)
 console.log(SCRIPTS.reduce((a,b) => {
   return calc(a) > calc(b) ? a : b
 }));
