@@ -52,3 +52,29 @@ arr.forEach(x => {
     return console.log(`${x} is even`);
   }
 });
+
+
+
+// Reduce Method
+function reduce(array, combine, current) {
+  let result = current;
+  for(element of array) {
+    result = combine(result, element)
+  }
+  return result;
+}
+
+console.log(reduce(arr, (a,b) => a + b, 0));
+
+let someArr = [20,27,59,28,49,10,58];
+console.log(reduce(someArr, (a,b) => {
+  if(a > b) return a;
+  return b;
+}, 0));
+
+// dalam method standardnya jika current di omit/tidak di tentukan maka defaultnya adalah element array pertama
+// sehingga reduce/b akan dimulai pada element[1]
+console.log(someArr.reduce((a,b)=>{
+  if(a < b) return a;
+  return b;
+}));
