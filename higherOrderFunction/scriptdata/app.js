@@ -78,3 +78,14 @@ console.log(someArr.reduce((a,b)=>{
   if(a < b) return a;
   return b;
 }));
+
+//menghitung bahasa mana yang memiliki range terbesar
+function calc(arr) {
+  return arr.ranges.reduce((a, [from, to]) =>{
+    return a + (to - from); // from to karena kita dah tau di array ranges cuma terdiri dr 2 element aja / destruktur
+  },0) // perlu param 0 agar reduce mulai dari element ke 0
+}
+
+console.log(SCRIPTS.reduce((a,b) => {
+  return calc(a) > calc(b) ? a : b
+}));
