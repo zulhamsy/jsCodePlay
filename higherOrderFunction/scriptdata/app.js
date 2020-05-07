@@ -90,3 +90,20 @@ function calc(arr) {
 console.log(SCRIPTS.reduce((a,b) => {
   return calc(a) > calc(b) ? a : b
 }));
+
+// countBy Function  
+function countBy(array, callback) {
+  let result = [];
+  for(element of array) {
+    let name = callback(element);
+    let known = result.findIndex(c => c.indicator == name);
+    if(known == -1) {
+      result.push({indicator: name, count: 1});
+    } else {
+      result[known].count++;
+    }
+  }
+  return result;
+}
+
+console.log(countBy(someArr, n => n > 40));
