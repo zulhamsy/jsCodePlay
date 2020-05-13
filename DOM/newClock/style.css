@@ -9,6 +9,7 @@
 body {
   font-family: sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -31,4 +32,19 @@ body {
 .minute {
   font-size: 4rem;
   font-weight: 200;
+}
+
+.milisec {
+  font-size: 0.5rem;
+  opacity: 0.5;
+  width: 20px;
+  align-self: center;
+}
+
+.lead {
+  opacity: 0.3;
+}
+
+.lead > span {
+  font-weight: 700;
 }
