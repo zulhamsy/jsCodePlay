@@ -17,9 +17,7 @@ function printTime() {
 }
 
 function addZero(num) {
-  if(num < 10) {
-    num = '0' + num.toString();
-  }
+  if(num < 10) num = '0' + num;
   return num;
 }
 

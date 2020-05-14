@@ -15,3 +15,12 @@ $('span.card-title').innerText = "Changed";
 
 // change css property
 $('span.card-title').style.display = 'none';
+
+
+// multiple DOM Selectors
+
+// mencari element by class name yang menjadi child .collection
+console.log($('.collection').getElementsByClassName('collection-item'));
+
+// mengganti text content dari .collection > .collection-item child ke 3 dengan Hello
+$('.collection').getElementsByClassName('collection-item')[2].textContent = 'Hello';
