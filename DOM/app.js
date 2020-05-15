@@ -24,3 +24,33 @@ console.log($('.collection').getElementsByClassName('collection-item'));
 
 // mengganti text content dari .collection > .collection-item child ke 3 dengan Hello
 $('.collection').getElementsByClassName('collection-item')[2].textContent = 'Hello';
+
+
+// create Element
+
+// assign variable to store element
+const li = document.createElement('li');
+
+// add class to li
+li.className = 'collection-item';
+
+// add text node (optional) + append to li
+li.appendChild(document.createTextNode('new list item'));
+
+// assign new var to store "a" tag
+const anchor = document.createElement('a');
+
+// add class to a tag
+anchor.className = 'delete-item secondary-content';
+
+// add attribute to a tag
+anchor.setAttribute('href', '#');
+
+// add inner HTML to a tag
+anchor.innerHTML = '<i class="fa fa-remove"></i>';
+
+// append a tag to li tag
+li.appendChild(anchor);
+
+// add li to ul.collection
+$('ul.collection').appendChild(li);
