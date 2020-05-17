@@ -1,4 +1,4 @@
 document.querySelector('.btn').addEventListener('click',
 function() {
-    console.log('Button has been clicked');
+    document.querySelector('#result').textContent = (Math.floor(Math.random()*1000));
 })
