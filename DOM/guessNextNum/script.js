@@ -7,16 +7,16 @@ const operate = {
   equal: (x,y) => x == y
 };
 
-//let rand = Math.floor(Math.random()*10);
+let rand = ()=>Math.floor(Math.random()*10);
 
 function clear() {
   $('.next').textContent = '';
-  $('.generated').textContent = Math.floor(Math.random()*10);
+  $('.generated').textContent = rand();
   
 }
 
 function play() {
-  $('.next').textContent = Math.floor(Math.random()*10);
+  $('.next').textContent = rand();
   
   let exec = $$('[name=choice]');
   let x = $('.next').textContent;
@@ -37,5 +37,5 @@ function play() {
   setTimeout(clear, 1000);
 }
 
-$('.generated').textContent = Math.floor(Math.random()*10);
+$('.generated').textContent = rand();
 $('.btn').addEventListener('click', play);
