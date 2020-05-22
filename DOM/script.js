@@ -35,6 +35,35 @@ $('form').addEventListener('submit',
     notes.push(value);
     // masukkan notes (object) dengan nilai yang sudah di stringfy
     localStorage.setItem('notes',JSON.stringify(notes));
+
+    // add to list item
+    viewData(value);
+
+    // clear input field after submitted
+    $('form').reset();
     e.preventDefault();
   }
 )
+
+// load data from localStorage
+let datas = JSON.parse(localStorage.getItem('notes'));
+datas.forEach((data) => viewData(data));
+
+function viewData(data) {
+  const li = document.createElement('li');
+  const anc = document.createElement('a');
+  // create li item
+  li.className = 'collection-item';
+  li.appendChild(document.createTextNode(data));
+
+  // create anchor tag
+  anc.className = 'delete-item secondary-content';
+  anc.setAttribute('href', '#');
+  anc.innerHTML = '<i class="fa fa-remove"></i>';
+
+  // append anchor tag to li item
+  li.appendChild(anc);
+
+  // add li to ul
+  $('ul.collection').appendChild(li);
+}
