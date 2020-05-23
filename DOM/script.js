@@ -2,7 +2,7 @@ const $ = (x) => document.querySelector(x);
 const $$ = (x)=> document.querySelectorAll(x);
 // load data from localStorage
 let datas = JSON.parse(localStorage.getItem('notes'));
-datas.forEach((data) => viewData(data));
+if(datas) datas.forEach((data)=>viewData(data));
 
 // remove single li element
 $('.collection').addEventListener('click',
