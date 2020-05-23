@@ -1,5 +1,8 @@
 const $ = (x) => document.querySelector(x);
 const $$ = (x)=> document.querySelectorAll(x);
+// load data from localStorage
+let datas = JSON.parse(localStorage.getItem('notes'));
+datas.forEach((data) => viewData(data));
 
 // remove single li element
 $('.collection').addEventListener('click',
@@ -7,6 +10,12 @@ $('.collection').addEventListener('click',
     if(e.target.classList.contains('fa-remove')) {
       // remove li element
       e.target.parentElement.parentElement.remove();
+      // get list value
+      let value = e.target.parentElement.parentElement.textContent;
+      // remove from localstorage
+      datas.pop(datas.indexOf(value));
+      // set again
+      localStorage.setItem('notes',JSON.stringify(datas));
     }
   }
 )
@@ -16,12 +25,13 @@ $('.clear-tasks').addEventListener('click',
   (e) => {
     // selectorAll result a frozen list, jadi harus di iterate
     $$('.collection-item').forEach((el) => el.remove());
+    localStorage.removeItem('notes');
     e.preventDefault();
   }
 )
 
 // form submit event
-$('form').addEventListener('submit',
+$('.btn').addEventListener('click',
   (e) => {
     let value = $('input').value;
     let notes;
@@ -44,10 +54,6 @@ $('form').addEventListener('submit',
     e.preventDefault();
   }
 )
-
-// load data from localStorage
-let datas = JSON.parse(localStorage.getItem('notes'));
-datas.forEach((data) => viewData(data));
 
 function viewData(data) {
   const li = document.createElement('li');
