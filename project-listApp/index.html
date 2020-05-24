@@ -16,13 +16,14 @@
         <form accept-charset="utf-8">
           <div class="form-group">
             <label for="content">New Task</label>
-            <input type="text" class="form-control" id="content">
+            <input type="text" class="form-control" id="content" autocomplete="off">
             <small id="emailHelp" class="form-text text-muted">You can put everything here</small>
           </div>
-          <button class="btn btn-primary btn-block" type="submit">Save</button>
+          <input class="btn btn-primary btn-block" type="submit" value="Save">
         </form>
-        <ul class="list-group mt-5 mb-2">
-          <li class="list-group-item d-flex justify-content-between align-items-center">Cras justo odio
+        <p class="lead mt-4">Task List</p>
+        <ul class="list-group mb-2">
+          <!--<li class="list-group-item d-flex justify-content-between align-items-center">Cras justo odio
             <a href="#" class="badge badge-pill badge-danger">x</a>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">Dapibus ac facilisis in
@@ -36,16 +37,19 @@
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">Vestibulum at eros
             <a href="#" class="badge badge-pill badge-danger">x</a>
-          </li>
+          </li>-->
         </ul>
-        <button class="btn btn-sm btn-outline-danger">Delete All</button>      
-        <!--End Body-->
+        <div class="text-right">
+          <button class="btn btn-sm btn-outline-danger">Delete All</button>
+        </div>
+        <!--End Card Body-->
       </div>
       <div class="card-footer text-muted text-center"> Made by <span class="font-weight-bold">Zulham</span>
       </div>
     <!--End Card-->
     </div>
   </div>
+  <script src="./js/script.js" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>
