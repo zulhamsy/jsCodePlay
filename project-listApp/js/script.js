@@ -20,7 +20,6 @@ function dataToHtml(data) {
 $('form').addEventListener('submit',
   (e) => {
     let text = $('input').value;
-    if(!text) break;
     let datas;
     // input to localStorage
     if(!localData) {
