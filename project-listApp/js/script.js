@@ -37,3 +37,20 @@ $('form').addEventListener('submit',
     e.preventDefault();
   }
 );
+
+// single delete item
+$('ul').addEventListener('click',
+  (e) => {
+    if(e.target.classList.contains('badge')) {
+      // remove li elem
+      e.target.parentElement.remove();
+      // remove from localStorage
+      let notes = JSON.parse(localData);
+      notes.pop(notes.indexOf(e.target.parentElement.textContent));
+      // set to  localStorage
+      localStorage.setItem('notes',JSON.stringify(notes));
+    }
+    
+    e.preventDefault();
+  }
+)
