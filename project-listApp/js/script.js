@@ -54,3 +54,14 @@ $('ul').addEventListener('click',
     e.preventDefault();
   }
 )
+
+// delete multiple element
+$('.btn-sm').addEventListener('click',
+  (e) => {
+    // remove from localStorage
+    localStorage.removeItem('notes');
+    // remove list element
+    Array.from($('ul.list-group').children).forEach((el) => el.remove());
+    e.preventDefault();
+  }
+)
