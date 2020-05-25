@@ -1,8 +1,8 @@
 const $ = (x) => document.querySelector(x);
-const localData = localStorage.getItem('notes');
+let localData = () => localStorage.getItem('notes');
 
 // load localStorage onload
-if(localData) JSON.parse(localData).forEach((data) => dataToHtml(data));
+if(localData()) JSON.parse(localData()).forEach((data) => dataToHtml(data));
 
 // function to show data to list element
 function dataToHtml(data) {
@@ -22,10 +22,10 @@ $('form').addEventListener('submit',
     let text = $('input').value;
     let datas;
     // input to localStorage
-    if(!localData) {
+    if(!localData()) {
       datas = [];
     } else {
-      datas = JSON.parse(localData);
+      datas = JSON.parse(localData());
     }
     datas.push(text);
     localStorage.setItem('notes', JSON.stringify(datas));
@@ -45,7 +45,7 @@ $('ul').addEventListener('click',
       // remove li elem
       e.target.parentElement.remove();
       // remove from localStorage
-      let notes = JSON.parse(localData);
+      let notes = JSON.parse(localData());
       notes.pop(notes.indexOf(e.target.parentElement.textContent));
       // set to  localStorage
       localStorage.setItem('notes',JSON.stringify(notes));
