@@ -46,7 +46,8 @@ $('ul').addEventListener('click',
       e.target.parentElement.remove();
       // remove from localStorage
       let notes = JSON.parse(localData());
-      notes.pop(notes.indexOf(e.target.parentElement.textContent));
+      //console.log(e.target.parentElement.textContent.slice(0,-1));
+      notes.splice(notes.indexOf(e.target.parentElement.textContent.slice(0,-1)),1);
       // set to  localStorage
       localStorage.setItem('notes',JSON.stringify(notes));
     }
