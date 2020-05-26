@@ -62,6 +62,7 @@ $('ul').addEventListener('click',
 // delete multiple element
 $('.btn-sm').addEventListener('click',
   (e) => {
+    !localData() ? toastr.error('No Data Found', 'Error') : toastr.success('All Data Deleted', 'Delete Success');
     // remove from localStorage
     localStorage.removeItem('notes');
     // remove list element
