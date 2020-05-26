@@ -6,7 +6,7 @@ if(localData()) JSON.parse(localData()).forEach((data) => dataToHtml(data));
 
 // function to show data to list element
 function dataToHtml(data) {
-  const ul = $('ul.list-group');
+  const ul = $('ul');
   const li = document.createElement('li');
   const a = '<a href="#" class="badge badge-pill badge-danger">x</a>';
   li.className = 'list-group-item d-flex justify-content-between align-items-center';
@@ -68,7 +68,7 @@ $('.btn-sm').addEventListener('click',
 )
 
 // filter event
-$('.form-control-sm').addEventListener('keyup',
+$('.form-control-sm').addEventListener('input',
   (e) => {
     // get value of list
     let list = document.querySelectorAll('li');
