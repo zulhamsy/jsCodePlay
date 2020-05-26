@@ -33,6 +33,8 @@ $('form').addEventListener('submit',
     dataToHtml(text);
     // clear index
     $('input').value = '';
+    // toast notif
+    toastr.success('Data added', 'Success');
     // prevent default behavior
     e.preventDefault();
   }
@@ -51,10 +53,11 @@ $('ul').addEventListener('click',
       // set to  localStorage
       localStorage.setItem('notes',JSON.stringify(notes));
     }
-    
+    // toast notif
+    toastr.info(`${e.target.parentElement.textContent.slice(0,-1)} deleted`, 'Deleted');
     e.preventDefault();
   }
-)
+);
 
 // delete multiple element
 $('.btn-sm').addEventListener('click',
@@ -65,7 +68,7 @@ $('.btn-sm').addEventListener('click',
     Array.from($('ul.list-group').children).forEach((el) => el.remove());
     e.preventDefault();
   }
-)
+);
 
 // filter event
 $('.form-control-sm').addEventListener('input',
@@ -82,4 +85,23 @@ $('.form-control-sm').addEventListener('input',
       }
     });
   }
-)
+);
+
+// toast setting
+toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": true,
+  "progressBar": true,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "500",
+  "timeOut": "2000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+};
