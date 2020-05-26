@@ -66,3 +66,20 @@ $('.btn-sm').addEventListener('click',
     e.preventDefault();
   }
 )
+
+// filter event
+$('.form-control-sm').addEventListener('keyup',
+  (e) => {
+    // get value of list
+    let list = document.querySelectorAll('li');
+    let text = e.target.value.toLowerCase();
+    list.forEach((el) => {
+      if(el.textContent.toLowerCase().slice(0,-1).indexOf(text) != -1) {
+        el.id = 'flex';
+        //console.log(el.style.id);
+      } else {
+        el.id = 'none';
+      }
+    });
+  }
+)
