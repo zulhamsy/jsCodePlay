@@ -8,16 +8,55 @@
     <title>Loan Calculator</title>
 </head>
 
-<body>
+<body class="bg-light">
   <div class="container">
-    <div class="card">
-      <div class="card-body">
-        <div class="card-title">
-          Loan Calculator
-        </div>
+    <div class="card mt-4 border border-secondary">
+      <div class="card-header text-center bg-secondary text-light">
+        <h4>Loan Calculator</h4>
       </div>
+      <!--End Card Header-->
+      <div class="card-body">
+        <!--Alert-->
+        <div class="alert alert-danger">
+          <h4 class="alert-heading">Ouch!</h4>
+          <p>You should check in on some of those fields below.</p>
+        </div>
+        <!--Amount-->
+        <div class="input-group flex-nowrap mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="addon-wrapping">Rp</span>
+          </div>
+          <input type="number" class="form-control" placeholder="Loan Amount">
+        </div>
+        <!--Interest-->
+        <div class="input-group flex-nowrap mb-3">
+          <input type="number" class="form-control" placeholder="Interest Rate">
+          <div class="input-group-prepend">
+            <span class="input-group-text rounded-right" id="addon-wrapping">%</span>
+          </div>
+        </div>
+        <!--Duration-->
+        <div class="input-group flex-nowrap mb-4">
+          <input type="number" class="form-control" placeholder="Number of Month">
+          <div class="input-group-prepend">
+            <span class="input-group-text rounded-right" id="addon-wrapping">mo</span>
+          </div>
+        </div>
+        <!--Button Action-->
+        <div class="text-center">
+          <button class="btn btn-secondary mr-2">Calculate</button>
+          <button class="btn btn-light">Reset</button>
+        </div>
+        <!--Result-->
+      </div>
+      <!--End Card Body-->
+      <div class="card-footer text-muted text-center"> Made by <span class="font-weight-bold">Zulham</span>
+      </div>
+      <!--End Footer-->
     </div>
+    <!--End Card Container-->
   </div>
+  <!--End Container-->
 </body>
 
 </html>
