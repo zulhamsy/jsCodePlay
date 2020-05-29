@@ -26,26 +26,26 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="addon-wrapping">Rp</span>
           </div>
-          <input type="number" class="form-control" placeholder="Loan Amount">
+          <input id="amount" type="number" class="form-control" placeholder="Loan Amount">
         </div>
         <!--Interest-->
         <div class="input-group flex-nowrap mb-3">
-          <input type="number" class="form-control" placeholder="Interest Rate">
+          <input id="interest" type="number" class="form-control" placeholder="Interest Rate">
           <div class="input-group-prepend">
             <span class="input-group-text rounded-right" id="addon-wrapping">%</span>
           </div>
         </div>
         <!--Duration-->
         <div class="input-group flex-nowrap mb-4">
-          <input type="number" class="form-control" placeholder="Number of Month">
+          <input id="duration" type="number" class="form-control" placeholder="Number of Month">
           <div class="input-group-prepend">
             <span class="input-group-text rounded-right" id="addon-wrapping">mo</span>
           </div>
         </div>
         <!--Button Action-->
         <div class="text-center">
-          <button class="btn btn-secondary mr-2">Calculate</button>
-          <button class="btn btn-light">Reset</button>
+          <button id="calc" class="btn btn-secondary mr-2">Calculate</button>
+          <button id="reset" class="btn btn-light">Reset</button>
         </div>
         <!--Result-->
         <hr />
@@ -53,12 +53,12 @@
         <!--Total Payment-->
         <div class="d-flex justify-content-between">
           <p class="text-muted">Total Payment</p>
-          <p class="font-weight-bold">Rp.100000</p>
+          <p id="result-total" class="font-weight-bold"></p>
         </div>
           <!--Monthly Payment-->
         <div class="d-flex justify-content-between">
           <p class="text-muted">Monthly Payment</p>
-          <p class="font-weight-bold">Rp.10000</p>
+          <p id="result-interest" class="font-weight-bold"</p>
         </div>
       </div>
       <!--End Card Body-->
@@ -69,6 +69,7 @@
     <!--End Card Container-->
   </div>
   <!--End Container-->
+  <script src="./js/script.js" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>
