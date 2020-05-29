@@ -30,6 +30,7 @@ function checker(pay, month) {
     $('.result').style.display = 'block';
     $('.alert').style.display = 'none';
   } else {
+    $('.result').style.display = 'none';
     $('.alert').style.display = 'block';
   }
 }
