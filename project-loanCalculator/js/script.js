@@ -15,14 +15,21 @@ function calc() {
       month = Number($('#duration').value),
       totalInt = Number((amount * ipm * month)),
       totalPay = amount + totalInt,
-      monthPay = totalPay / 12;
+      monthPay = totalPay / month;
 
-
+      checker(totalPay, month);
 
     $('#result-total').textContent = `Rp.${totalPay.toFixed(2)}`;
     $('#result-interest').textContent = `Rp.${monthPay.toFixed(2)}`;
     // hide spinner
     $('.hider').style.display = 'none';
-    // show result
+}
+
+function checker(pay, month) {
+  if(pay != 0 && month != 0) {
     $('.result').style.display = 'block';
+    $('.alert').style.display = 'none';
+  } else {
+    $('.alert').style.display = 'block';
+  }
 }
