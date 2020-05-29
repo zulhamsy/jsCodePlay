@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css" media="all" />
     <title>Loan Calculator</title>
+    <style type="text/css" media="all">
+      .hider, .result {
+        display: none;
+      }
+    </style>
 </head>
 
 <body class="bg-light">
@@ -44,21 +49,25 @@
         </div>
         <!--Button Action-->
         <div class="text-center">
-          <button id="calc" class="btn btn-secondary mr-2">Calculate</button>
+          <button id="calc" class="btn btn-secondary mr-2">
+            <span class="hider spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Calculate</button>
           <button id="reset" class="btn btn-light">Reset</button>
         </div>
         <!--Result-->
-        <hr />
-        <h3 class="mb-3">Result</h3>
+        <div class="result">
+          <hr />
+          <h3 class="mb-3">Result</h3>
         <!--Total Payment-->
-        <div class="d-flex justify-content-between">
-          <p class="text-muted">Total Payment</p>
-          <p id="result-total" class="font-weight-bold"></p>
-        </div>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Total Payment</p>
+            <p id="result-total" class="font-weight-bold"></p>
+          </div>
           <!--Monthly Payment-->
-        <div class="d-flex justify-content-between">
-          <p class="text-muted">Monthly Payment</p>
-          <p id="result-interest" class="font-weight-bold"</p>
+          <div class="d-flex justify-content-between">
+            <p class="text-muted">Monthly Payment</p>
+            <p id="result-interest" class="font-weight-bold"</p>
+          </div>
         </div>
       </div>
       <!--End Card Body-->
