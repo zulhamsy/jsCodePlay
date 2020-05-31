@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Issue Tracker OOP</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+</head>
+
+<body>
+  <div class="container mt-3">
+    <div class="header text-center">
+      <p class="font-weight-bold">Issue Tracker App</p>
+      <p class="text-muted">With OOP</p>
+    </div>
+    <!--End Header-->
+    <form class="mt-3 mb-4">
+      <!--Issues-->
+      <div class="form-group">
+        <label for="issue">Issue</label>
+        <input type="text" class="form-control" id="issue" placeholder="unexpected error in #34">
+      </div>
+      <!--Category-->
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input type="text" class="form-control" id="category" placeholder="bug / improvement">
+      </div>      
+      <!--Assigner-->
+      <div class="form-group">
+        <label for="assigner">Assigner</label>
+        <input type="text" class="form-control" id="assigner">
+      </div>
+      <!--Submit button-->
+      <input class="btn btn-block btn-primary" type="submit" name="submit" id="submit" value="Submit" />
+    </form>
+    <!--End Form-->
+    <h5>Issues</h5>
+    <div class="table-responsive-sm">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Issue</th>
+          <th scope="col">Assigner</th>
+          <th scope="col">Category</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Bug found in line #58</td>
+          <td>Otto</td>
+          <td>Bug</td>
+          <td><a href="#">delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <!--End Tables-->
+  </div>
+  <!--End Container-->
+  <!--JS-->
+  <script src="app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
