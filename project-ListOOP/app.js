@@ -37,10 +37,12 @@ class UI {
   // alert
   showAlert(message, status) {
     let div = document.createElement('div');
-    div.className = `alert alert-${status}`;
+    div.className = `alert alert-${status} mt-3`;
     div.appendChild(document.createTextNode(message));
     // append div to page
-    $('.container').appendChild(div);
+    $('form').before(div);
+    // clear after 1.5s
+    setTimeout(()=> $('.alert').remove(), 1500);
   }
 }
 
