@@ -107,6 +107,9 @@ $('form').addEventListener('submit',
       
       // add to LocalStorage
       Storage.addItem(issue);
+      
+      // alert
+      ui.showAlert('Data berhasil diinput', 'success');
    
       // clear fields
       ui.clearFields();
