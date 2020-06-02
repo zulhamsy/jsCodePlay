@@ -75,6 +75,14 @@ class Storage {
 const ui = new UI;
 
 // Event Listener
+window.addEventListener('DOMContentLoaded',
+  () => {
+    Storage.getItem().forEach((item) => {
+      ui.addToTable(item);
+    });
+  }
+);
+
 $('form').addEventListener('submit',
   (e) => {
     const title = $('#issue').value,
