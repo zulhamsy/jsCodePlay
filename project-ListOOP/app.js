@@ -16,15 +16,22 @@ class UI {
     const table = $('tbody');
     // create tr
     const tr = document.createElement('tr');
+    // tr class
+    tr.className = 'item';
     // add item to tr
     tr.innerHTML = `
-      <th scope="row">1</th> 
+      <th scope="row">#</th> 
       <td>${item.title}</td>
       <td>${item.assigner}</td>
       <td>${item.category}</td>
       <td><a href="#" class="del">delete</a></td >
       `;
-    table.appendChild(tr)
+    //table.appendChild(tr)
+    if(table.children.length == 0) {
+      table.appendChild(tr);
+    } else {
+      $('tr.item').before(tr);
+    }
   }
   
   // clear field
