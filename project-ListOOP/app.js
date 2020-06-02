@@ -45,6 +45,34 @@ class UI {
     setTimeout(()=> $('.alert').remove(), 1500);
   }
 }
+// LocalStorage Class
+class Storage {
+  static getItem() {
+    let items;
+    if(!localStorage.getItem('items')) {
+      items = [];
+    } else {
+      items = JSON.parse(localStorage.getItem('items'));
+    }
+    return items;
+  }
+  
+  static addItem(issue) {
+    let items = Storage.getItem();
+    items.push(issue);
+    localStorage.setItem('items', JSON.stringify(items));
+  }
+  
+  static removeItem(value) {
+    let items = Storage.getItem();
+    items.forEach((item, index) => {
+      if(item.title == value) items.splice(index, 1);
+    });
+    localStorage.setItem('items', JSON.stringify(items));
+  }
+}
+
+const ui = new UI;
 
 // Event Listener
 $('form').addEventListener('submit',
@@ -55,15 +83,15 @@ $('form').addEventListener('submit',
     // instantiate issue
     const issue = new Issue(title, category, assigner);
     
-    // instantiate ui
-    const ui = new UI;
-    
     // validation
     if(title == '' || category == '' || assigner == '') {
       ui.showAlert('Cek fieldnya dulu', 'danger');
     } else {
       // add data to table
       ui.addToTable(issue);
+      
+      // add to LocalStorage
+      Storage.addItem(issue);
    
       // clear fields
       ui.clearFields();
@@ -76,7 +104,14 @@ $('form').addEventListener('submit',
 $('tbody').addEventListener('click',
   (e) => {
     const row = e.target.parentElement.parentElement;
-    if(e.target.classList.contains("del")) row.remove();
+    if(e.target.classList.contains("del")) {
+      // remove from LS
+      Storage.removeItem(row.children[1].textContent);
+      // remove from DOM
+      row.remove();
+      // show alert
+      ui.showAlert('Data berhasil dihapus', 'success');
+    }
     e.preventDefault();
   }
 );
