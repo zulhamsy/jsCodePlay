@@ -82,7 +82,11 @@ class Storage {
 
   static idGenerator() {
     let items = Storage.getItem();
-    return items[items.length-1].id + 1;
+    if(items.length > 0) {
+      return items[items.length-1].id + 1;
+    } else {
+      return 0;
+    }
   }
 }
 
