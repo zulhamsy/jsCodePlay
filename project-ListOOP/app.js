@@ -2,10 +2,11 @@ const $ = (x) => document.querySelector(x);
 
 // Issue Class
 class Issue {
-  constructor(title,category,assigner) {
+  constructor(title,category,assigner, id) {
     this.title = title;
     this.category = category;
     this.assigner = assigner;
+    this.id = id;
   }
 }
 // UI Class
@@ -24,7 +25,8 @@ class UI {
       <td>${item.title}</td>
       <td>${item.assigner}</td>
       <td>${item.category}</td>
-      <td><a href="#" class="del">delete</a></td >
+      <td><a href="#" class="del">delete</a></td>
+      <td class="hidden">${item.id}</td>
       `;
     //table.appendChild(tr)
     if(table.children.length == 0) {
@@ -73,9 +75,13 @@ class Storage {
   static removeItem(value) {
     let items = Storage.getItem();
     items.forEach((item, index) => {
-      if(item.title == value) items.splice(index, 1);
+      if(item.id == value) items.splice(index, 1);
     });
     localStorage.setItem('items', JSON.stringify(items));
+  }
+
+  static idGenerator() {
+    return Storage.getItem().length;
   }
 }
 
@@ -94,9 +100,10 @@ $('form').addEventListener('submit',
   (e) => {
     const title = $('#issue').value,
           category = $('#category').value,
-          assigner = $('#assigner').value;
+          assigner = $('#assigner').value,
+          id = Storage.idGenerator();
     // instantiate issue
-    const issue = new Issue(title, category, assigner);
+    const issue = new Issue(title, category, assigner, id);
     
     // validation
     if(title == '' || category == '' || assigner == '') {
@@ -110,7 +117,7 @@ $('form').addEventListener('submit',
       
       // alert
       ui.showAlert('Data berhasil diinput', 'success');
-   
+
       // clear fields
       ui.clearFields();
     }
@@ -124,7 +131,7 @@ $('tbody').addEventListener('click',
     const row = e.target.parentElement.parentElement;
     if(e.target.classList.contains("del")) {
       // remove from LS
-      Storage.removeItem(row.children[1].textContent);
+      Storage.removeItem(row.children[5].textContent);
       // remove from DOM
       row.remove();
       // show alert
