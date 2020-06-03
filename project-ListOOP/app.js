@@ -81,7 +81,8 @@ class Storage {
   }
 
   static idGenerator() {
-    return Storage.getItem().length;
+    let items = Storage.getItem();
+    return items[items.length-1].id + 1;
   }
 }
 
