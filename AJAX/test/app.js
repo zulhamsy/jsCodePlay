@@ -24,7 +24,8 @@ function loadData() {
             // 3 : processing request
             // 4 : request finished and response is ready
         if(this.status == 200) {
-            console.log(this.response);
+            document.querySelector('h1').textContent = this.responseText;
+            
         }
     }
 
