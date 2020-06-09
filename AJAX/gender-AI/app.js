@@ -7,7 +7,7 @@ $('form').addEventListener('submit',
     xhr.open('GET', `https://api.diversitydata.io/?fullname=${$('#fname').value}%20${$('#lname').value}`, true);
     // onprogress
     xhr.onloadstart = function() {
-      $('#loader').className = 'spinner-border text-primary show';
+      $('#loader').className = 'spinner-border text-primary mb-3 show';
     };
     xhr.onprogress = function () {
       $('#loader').className = 'spinner-border text-primary hidden';
