@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/jscodeplay/project-ListOOP/css/bootstrap.min.css" type="text/css" media="all" />
+    <title>Predict Gender</title>
+    <style type="text/css" media="all">
+      .hidden {
+        display: none;
+      }
+      
+      .show {
+        display: block;
+      }
+      
+      .show-table {
+        display: table;
+      }
+      
+      #name {
+        text-transform: capitalize;
+      }
+    </style>
+</head>
+  
+<body>
+  <div class="container-sm mt-3">
+    <h4 class="text-center">Gender and Ethnic Predictor</h4>
+    <small class="d-block text-center text-muted">Powered by Machine Learning</small>
+    <form class="mt-4 mb-4">
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" class="form-control" id="fname" autocomplete="off">
+        <small class="form-text text-muted">We'll never share this name with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" class="form-control" id="lname" autocomplete="off">
+      </div>
+      <input type="submit" name="submit" id="submit" value="Predict" class="btn btn-block btn-primary" />
+    </form>
+    <!--Result-->
+    <h5>Result</h5>
+    <!--Spinner-->
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border text-primary hidden" role="status" id=loader></div>    
+    </div>
+    <table class="table table-striped hidden">
+      <tbody>
+        <!--Name-->
+        <tr>
+          <td>Full Name</td>
+          <td class="text-muted" id="name"></td>
+        </tr>
+        <!--Gender-->
+        <tr>
+          <td>Gender</td>
+          <td class="text-muted" id="gender"></td>
+        </tr>
+        <!--Gender Prob-->
+        <tr>
+          <td>Gender Prob</td>
+          <td class="text-success" id="gender-prob"></td>
+        </tr>
+        <!--Ethnic-->
+        <tr>
+          <td>Ethnic</td>
+          <td class="text-muted" id="ethnic"></td>
+        </tr>
+        <!--Ethnic Prob-->
+        <tr>
+          <td>Ethnic Prob</td>
+          <td class="text-success" id="ethnic-prob"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

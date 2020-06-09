@@ -7,6 +7,14 @@ $('form').addEventListener('submit',
         const xhr = new XMLHttpRequest;
         // open request
         xhr.open('GET', `http://api.icndb.com/jokes/random/${num}`, true);
+        // onprocess
+        xhr.onreadystatechange = function() {
+          if(this.readyState == 3) {
+            console.log('Processing');
+          } else if(this.readyState == 4) {
+            console.log('Finished');
+          }
+        }
         // onload
         xhr.onload = function() {
           if(this.status == 200) {
