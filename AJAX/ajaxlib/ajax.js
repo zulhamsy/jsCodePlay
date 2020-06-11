@@ -7,7 +7,10 @@ class EasyHTTP extends XMLHttpRequest {
             if (this.status == 200) {
                 callback(this.responseText);
             } else {
-                callback(`Error : ${this.statusText}`);
+                callback({
+                    code: this.status,
+                    status: this.statusText
+                });
             }
         };
 
