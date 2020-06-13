@@ -12,20 +12,35 @@ const http = new EasyHTTP;
 // )
 
 // GET single post (by post id) atau bisa lainnya tergantung routes dari backend
-// http.get('https://jsonplaceholder.typicode.com/posts/1',
-//     function(post) {
-//         console.log(post); 
-//     }
-// )
+/*
+http.get('https://jsonplaceholder.typicode.com/posts/1',
+  function(post) {
+    console.log(post);
+  }
+);
 
 // POST request
 const data = {
-    title: "New post",
-    body: "Hi there"
+  title: "New post",
+  body: "Pesan ini tidak akan di simpan di server, hanya dikembalikan dengan ID generate baru"
 };
 
-http.post('https://jsonplaceholder.typicode.com/posts', data, 
-    function(post) {
-        console.log(post);
-    }
-)
+http.post('https://jsonplaceholder.typicode.com/posts', data,
+  function(post) {
+    console.log(post);
+  }
+); */
+
+// PUT request
+// biasanya untuk mengupdate data
+const update = {
+  id: 1,
+  title: "New Post Update",
+  body: "This post is updated",
+  userId: 10
+};
+http.put('https://jsonplaceholder.typicode.com/posts/1', update,
+  function(data) {
+    console.log(data);
+  }
+);
