@@ -55,4 +55,20 @@ class EasyHTTP extends XMLHttpRequest {
     this.send(JSON.stringify(data));
   }
   // delete request
+  delete(url,callback) {
+    this.open('DELETE', url, true);
+
+    this.onload = function() {
+      if (this.status >= 200 && this.status < 300) {
+        callback('Data Deleted');
+      } else {
+        callback({
+          code: this.status,
+          status: this.statusText
+        });
+      }
+    };
+
+    this.send();
+  }
 }
