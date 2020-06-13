@@ -17,9 +17,10 @@ http.get('https://jsonplaceholder.typicode.com/posts/1',
   function(post) {
     console.log(post);
   }
-);
+); */
 
 // POST request
+/*
 const data = {
   title: "New post",
   body: "Pesan ini tidak akan di simpan di server, hanya dikembalikan dengan ID generate baru"
@@ -34,10 +35,8 @@ http.post('https://jsonplaceholder.typicode.com/posts', data,
 // PUT request
 // biasanya untuk mengupdate data
 const update = {
-  id: 1,
   title: "New Post Update",
   body: "This post is updated",
-  userId: 10
 };
 http.put('https://jsonplaceholder.typicode.com/posts/1', update,
   function(data) {

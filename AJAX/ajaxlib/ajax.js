@@ -20,7 +20,7 @@ class EasyHTTP extends XMLHttpRequest {
   post(url, data, callback) {
     this.open('POST', url, true);
 
-    this.setRequestHeader('Content-type', 'application/json');
+    this.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
 
     this.onload = function() {
       if (this.status >= 200 && this.status < 300) {
@@ -38,6 +38,8 @@ class EasyHTTP extends XMLHttpRequest {
   // put request
   put(url, data, callback) {
     this.open('PUT', url, true);
+    
+    this.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
 
     this.onload = function() {
       if (this.status >= 200 && this.status < 300) {
