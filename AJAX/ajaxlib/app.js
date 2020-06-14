@@ -34,6 +34,7 @@ http.post('https://jsonplaceholder.typicode.com/posts', data,
 
 // PUT request
 // biasanya untuk mengupdate data
+/*
 const update = {
   title: "New Post Update",
   body: "This post is updated",
@@ -41,5 +42,20 @@ const update = {
 http.put('https://jsonplaceholder.typicode.com/posts/1', update,
   function(data) {
     console.log(data);
+  }
+); */
+
+// DELETE request
+/*
+http.delete('https://jsonplaceholder.typicode.com/posts/1', function(deleteditem) {
+  console.log(deleteditem);
+}); */
+
+http.get('https://reqres.in/api/users',
+  function(response) {
+    response = JSON.parse(response);
+    response.data.forEach(user => {
+      console.log(`${user.first_name} ${user.last_name}`);
+    })
   }
 );
