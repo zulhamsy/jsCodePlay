@@ -9,12 +9,12 @@ $('form').addEventListener('submit',
     xhr.onloadstart = function() {
       $('#loader').className = 'spinner-border text-primary mb-3 show';
     };
-    xhr.onprogress = function () {
+    xhr.onprogress = function() {
       $('#loader').className = 'spinner-border text-primary hidden';
     };
     // onload event
     xhr.onload = function() {
-      if(this.status == 200) {
+      if (this.status == 200) {
         const result = JSON.parse(this.responseText);
         $('table').className = 'table table-striped show-table'
         $('#name').textContent = result.fullname;
