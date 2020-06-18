@@ -1,4 +1,4 @@
-const http = new EasyHTTP;
+const http = new EasyHttp;
 
 // const result = http.get('https://jsonplaceholder.typicode.com/posts');
 
@@ -51,11 +51,23 @@ http.delete('https://jsonplaceholder.typicode.com/posts/1', function(deleteditem
   console.log(deleteditem);
 }); */
 
-http.get('https://reqres.in/api/users',
-  function(response) {
-    response = JSON.parse(response);
-    response.data.forEach(user => {
-      console.log(`${user.first_name} ${user.last_name}`);
-    })
-  }
-);
+// http.get('https://reqres.in/api/users',
+//   function (response) {
+//     response = JSON.parse(response);
+//     response.data.forEach(user => {
+//       console.log(`${user.first_name} ${user.last_name}`);
+//     })
+//   }
+// );
+
+// using new async
+// http.get('https://jsonplaceholder.typicode.com/posts')
+//   .then(result => console.log(result));
+
+const data = {
+  title: 'New Title',
+  body: 'This post is edited'
+};
+
+http.delete('https://jsonplaceholder.typicode.com/posts/5')
+  .then(result => console.log(result));
