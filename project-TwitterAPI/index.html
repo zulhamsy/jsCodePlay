@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitter API</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .result.container {
+            padding: 0;
+        }
+    </style>
 </head>
 <body class="bg-secondary">
     <div class="container mt-3">
@@ -18,7 +23,25 @@
                 <input type="text" name="query" id="query" class="form-control mb-2" placeholder="ex: zulhamsy">
                 <input type="submit" value="Search" class="btn btn-info btn-block">
                 <!-- result -->
-                
+                <div class="result mt-4">
+                    <h5 class="font-weight-bolder">Result</h5>
+                    <div class="result container mt-3">
+                        <div class="row">
+                            <!-- Photo Profile -->
+                            <div class="col-5">
+                                <img src="http://pbs.twimg.com/profile_images/1272753809568104449/vhfw11Jq.jpg" alt="" class="img-thumbnail">
+                            </div>
+                            <!-- Information -->
+                            <div class="col-7">
+                                <h5>Zulham Syafrawi</h5>
+                                <p class="text-muted">@zulhamsy</p>
+                                <span class="badge badge-primary">20 Following</span>
+                                <span class="badge badge-success">22 Follower</span>
+                                <span class="badge badge-secondary">140 Tweets</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- card footer -->
             <div class="card-footer text-muted text-center mt-3">Made by <span class="font-weight-bold">Zulham</span></div>
