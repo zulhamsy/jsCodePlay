@@ -22,9 +22,10 @@ class Utility {
 
 let imgUrl = 'http://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3_normal.png';
 
-//(-11, 7);
-//console.log(imgUrl.substring(0, (imgUrl.length - 11)));
-
-//console.log(imgUrl.substring((imgUrl.length - 4), (imgUrl.length)));
-
-console.log(Utility.imgUrl(imgUrl));
+// Test Fetch Data API
+fetch('https://api.twitter.com/1.1/users/show.json?screen_name=zulhamsy', {
+  mode: 'cors',
+  header: {
+    'Authorization': `OAuth oauth_consumer_key="ntSAhkIHUmpg5Q7KVBRCTNhK1",oauth_token="594370592-1Gk35x0xaBRWa2Zc2mnC6ScB7GTSgTu8Rt9MCDfs",oauth_signature_method="HMAC-SHA1",oauth_timestamp="${Utility.timeStamp}",oauth_nonce="${Utility.randomStr(11)}",oauth_version="1.0",oauth_signature="DpdH7cUAlvdugr755eVokvhpSYs%3D"`
+  }
+}).then(response => response.json).then(result => console.log(result));
