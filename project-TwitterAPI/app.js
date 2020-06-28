@@ -10,5 +10,8 @@ $('button[type="submit"').addEventListener('click', async function(e) {
     const profile = await http.getData(text);
     // display data to UI
     UI.displayProfile(profile);
+  } else {
+    // hide result
+    UI.resetDisplay();
   }
 })
