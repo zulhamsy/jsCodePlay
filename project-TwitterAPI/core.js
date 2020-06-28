@@ -1,31 +1,22 @@
-class Utility {
-  static randomStr(length) {
-    const string = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    let result = '';
+const $ = (q) => document.querySelector(q);
 
-    for (let i = length; i > 0; i--) result += string[Math.floor(Math.random() * string.length)];
-
-    return result;
-  }
-
-  static timeStamp() {
-    const now = new Date();
-    return Math.round(now.getTime() / 1000);
-  }
-
-  static imgUrl(url) {
-    const loc = url.substring(0, (imgUrl.length - 11)),
-      ext = url.substring((url.length - 4), (url.length));
-    return `${loc}${ext}`;
+class HttpRequest {
+  async getData(input) {
+    let response = await fetch(`https://api.github.com/users/${input}`);
+    let data = await response.json();
+    return data;
   }
 }
 
-let imgUrl = 'http://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3_normal.png';
-
-// Test Fetch Data API
-fetch('https://api.twitter.com/1.1/users/show.json?screen_name=zulhamsy', {
-  mode: 'cors',
-  header: {
-    'Authorization': `OAuth oauth_consumer_key="ntSAhkIHUmpg5Q7KVBRCTNhK1",oauth_token="594370592-1Gk35x0xaBRWa2Zc2mnC6ScB7GTSgTu8Rt9MCDfs",oauth_signature_method="HMAC-SHA1",oauth_timestamp="${Utility.timeStamp}",oauth_nonce="${Utility.randomStr(11)}",oauth_version="1.0",oauth_signature="DpdH7cUAlvdugr755eVokvhpSYs%3D"`
+class UI {
+  static displayProfile(input) {
+    $('.result').className = 'result mt-4 show';
+    
+    // $('#img_profile').src = input.avatar_url;
+    console.log(input.login);
+    $('#name_profile').innerHTML = input.login;
+    $('#friends_profile').innerHTML = input.following;
+    $('#follower_profile').innerHTML = input.follower;
+    $('#repo_profile').innerHTML = input.public_repo;
   }
-}).then(response => response.json).then(result => console.log(result));
+}

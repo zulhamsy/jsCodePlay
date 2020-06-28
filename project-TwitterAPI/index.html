@@ -1,57 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twitter API</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <style>
-        .result.container {
-            padding: 0;
-        }
 
-        p {
-            line-height: 0.5;
-        }
-    </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter API</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    .result.container {
+      padding: 0;
+    }
+
+    p {
+      line-height: 0.5;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    .show {
+      display: block;
+    }
+  </style>
 </head>
+
 <body class="bg-secondary">
-    <div class="container mt-3">
-        <!-- card -->
-        <div class="card">
-            <!-- card body -->
-            <div class="card-body">
-                <!-- title -->
-                <h4 class="card-title text-center text-monospace mb-4">GitHub Search Profile</h4>
-                <!-- search form -->
-                <input type="text" name="query" id="query" class="form-control mb-2" placeholder="ex: zulhamsy">
-                <input type="submit" value="Search" class="btn btn-info btn-block">
-                <!-- result -->
-                <div class="result mt-4">
-                    <h5 class="font-weight-bolder">Result</h5>
-                    <div class="result container mt-3">
-                        <div class="row">
-                            <!-- Photo Profile -->
-                            <div class="col-5">
-                                <img src="http://pbs.twimg.com/profile_images/1272753809568104449/vhfw11Jq.jpg" alt="" class="img-thumbnail">
-                            </div>
-                            <!-- Information -->
-                            <div class="col-7">
-                                <p class="text-muted">@zulhamsy</p>
-                                <span class="badge badge-primary">20 Following</span>
-                                <span class="badge badge-success">22 Follower</span>
-                                <span class="badge badge-secondary">9 Public Repos</span>
-                            </div>
-                        </div>
-                        <!-- Latest Repos -->
-                    </div>
-                </div>
+  <div class="container mt-3">
+    <!-- card -->
+    <div class="card">
+      <!-- card body -->
+      <div class="card-body">
+        <!-- title -->
+        <h4 class="card-title text-center text-monospace mb-4">GitHub Search Profile</h4>
+        <!-- search form -->
+        <input type="text" name="query" id="query" class="form-control mb-2" placeholder="ex: zulhamsy">
+        <button type="submit" class="btn btn-info btn-block">Search</button>
+        <!-- result -->
+        <div class="result mt-4 hidden">
+          <h5 class="font-weight-bolder">Result</h5>
+          <div class="result container mt-3">
+            <div class="row">
+              <!-- Photo Profile -->
+              <div class="col-5">
+                <img id="img-profile" src="" alt="" class="img-thumbnail">
+              </div>
+              <!-- Information -->
+              <div class="col-7">
+                <p id="name-profile" class="text-muted"></p>
+                <span id="friend-profile" class="badge badge-primary"></span>
+                <span id="follower-profile" class="badge badge-success"></span>
+                <span id="repo-profile" class="badge badge-secondary"></span>
+              </div>
             </div>
-            <!-- card footer -->
-            <div class="card-footer text-muted text-center mt-3">Made by <span class="font-weight-bold">Zulham</span></div>
+            <!-- Latest Repos -->
+          </div>
+        </div>
+      </div>
+      <!-- card footer -->
+      <div class="card-footer text-muted text-center mt-3">Made by <span class="font-weight-bold">Zulham</span></div>
     </div>
     <!-- Script -->
     <script src="core.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
