@@ -69,8 +69,8 @@ input:focus {
 
 /* ID */
 #city-name {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 #date {
@@ -80,4 +80,5 @@ input:focus {
 #current-temp {
     font-size: 4.2rem;
     font-weight: 800;
+    padding-top: 2.5rem;
 }
