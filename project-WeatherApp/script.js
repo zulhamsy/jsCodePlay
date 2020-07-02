@@ -10,12 +10,14 @@ $('input').addEventListener('keyup',
     const input = e.target.value;
     // request to API
     const res = await http.getData(input);
+    // error handling
+    if(res.error) {
+      UI.showAlert(res.error.message);
+      return;
+    }
     // display to UI
     ui.displayData(res);
     // store input name to localStorage
     //Storage.store(input);
-  } else {
-    // show alert
-    //UI.showAlert('Please provide city name');
   }
 });

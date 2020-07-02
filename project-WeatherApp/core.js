@@ -25,4 +25,7 @@ class UI {
     $('#current-temp').textContent = `${data.current.temp_c}°c`;
     $('#weather-text').textContent = data.current.condition.text;
   }
+  static showAlert(message) {
+    console.log(message);
+  }
 }
