@@ -13,7 +13,16 @@ class HtmlRequest {
 }
 
 class UI {
-  static displayData(data) {
+  constructor() {
+    this.month = ['January', 'February', 'March', 'April', 'May', 'June', 'August', 'September', 'October', 'November', 'December'];
+    this.day = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  }
+  displayData(data) {
+    const dates = new Date(data.location.localtime_epoch * 1000);
     
+    $('#city-name').textContent = `${data.location.name}, ${data.location.country}`;
+    $('#date').textContent = `${this.day[dates.getDay()]}, ${dates.getDate()} ${this.month[dates.getMonth()]} ${dates.getFullYear()}`;
+    $('#current-temp').textContent = `${data.current.temp_c}°c`;
+    $('#weather-text').textContent = data.current.condition.text;
   }
 }
