@@ -25,7 +25,12 @@ class UI {
     $('#current-temp').textContent = `${data.current.temp_c}°c`;
     $('#weather-text').textContent = data.current.condition.text;
   }
-  static showAlert(message) {
-    console.log(message);
+  static showAlert(message, query) {
+    $('.alert').textContent = `${message} - ${query}`;
+    $('.alert').className = 'alert block';
+    // set hide
+    setTimeout(function(){
+      $('.alert').className = 'alert hidden';
+    }, 1500);
   }
 }

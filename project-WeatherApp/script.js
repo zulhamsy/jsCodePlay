@@ -12,7 +12,7 @@ $('input').addEventListener('keyup',
     const res = await http.getData(input);
     // error handling
     if(res.error) {
-      UI.showAlert(res.error.message);
+      UI.showAlert(res.error.message, input);
       return;
     }
     // display to UI
