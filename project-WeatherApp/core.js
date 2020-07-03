@@ -31,6 +31,6 @@ class UI {
     // set hide
     setTimeout(function(){
       $('.alert').className = 'alert hidden';
-    }, 1500);
+    }, 2500);
   }
 }
