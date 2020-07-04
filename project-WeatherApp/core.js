@@ -34,3 +34,9 @@ class UI {
     }, 2500);
   }
 }
+
+class Storage {
+  static store(item) {
+    localStorage.setItem('location', item);
+  }
+}

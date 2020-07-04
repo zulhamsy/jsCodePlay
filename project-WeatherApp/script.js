@@ -2,6 +2,10 @@
 const http = new HtmlRequest;
 const ui = new UI;
 
+if (localStorage.getItem('location')) {
+  http.getData(localStorage.getItem('location')).then(res => ui.displayData(res));
+}
+
 $('input').addEventListener('keyup',
   async function(e) {
   e.preventDefault();
@@ -18,6 +22,6 @@ $('input').addEventListener('keyup',
     // display to UI
     ui.displayData(res);
     // store input name to localStorage
-    //Storage.store(input);
+    Storage.store(input);
   }
 });
