@@ -31,8 +31,10 @@ const lengthUpdate = function(target) {
 const validation = function(target) {
 	if(target.length > 100) {
 		document.querySelector('#input').classList.add('is-invalid');
+		document.querySelector('#comm-length').classList.replace('text-muted', 'text-danger');
 	} else {
 		document.querySelector('#input').classList.remove('is-invalid');
+		document.querySelector('#comm-length').classList.replace('text-danger', 'text-muted');
 	}
 };
 
