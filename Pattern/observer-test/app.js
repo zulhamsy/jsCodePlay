@@ -32,6 +32,14 @@ const lengthUpdate = function(target) {
 	$('#comm-length').textContent = `${target.length}/100`;
 };
 
+const buttonValid = function(bool) {
+	if(bool) {
+		$('button').disabled = false;
+	} else {
+		$('button').disabled = true;
+	}
+};
+
 const validation = function(target) {
 	if(target.length > 100) {
 		$('#input').classList.add('is-invalid');
@@ -42,8 +50,21 @@ const validation = function(target) {
 	}
 };
 
+const wordValid = function(target) {
+	const re = /(bodoh|goblok|tolol|dungu|bego)/gi;
+	if(re.exec(target)) {
+		$('#input').classList.add('is-invalid');
+		$('#invalid').textContent = 'Your tweet contains bad word(s)';
+		buttonValid(false);
+	} else {
+		$('#invalid').textContent = '';
+		buttonValid(true);
+	}
+};
+
 Subject.subs(lengthUpdate);
 Subject.subs(validation);
+Subject.subs(wordValid);
 
 $('#input').addEventListener('keyup', e => {
 	Subject.notify(e.target.value);

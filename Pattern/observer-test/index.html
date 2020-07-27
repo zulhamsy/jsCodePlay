@@ -13,8 +13,10 @@
     <div class="form-group">
       <label for="input">Comment</label>
       <textarea class="form-control" id="input" rows="3"></textarea>
-      <small id="comm-length" class="form-text text-muted text-right">0/100</small>
+      <div id="invalid" class="invalid-feedback d-inline"></div>
+      <small id="comm-length" class="form-text text-muted float-right">0/100</small>
     </div>
+    <button class="btn btn-primary mt-3" type="submit">Tweet</button>
   </div>
   <script src="app.js" type="text/javascript" charset="utf-8"></script>
 </body>
