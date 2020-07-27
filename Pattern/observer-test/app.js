@@ -24,24 +24,28 @@ const Subject = (function() {
   }
 })();
 
+const $ = function(query) {
+	return document.querySelector(query);
+};
+
 const lengthUpdate = function(target) {
-	document.querySelector('#comm-length').textContent = `${target.length}/100`;
+	$('#comm-length').textContent = `${target.length}/100`;
 };
 
 const validation = function(target) {
 	if(target.length > 100) {
-		document.querySelector('#input').classList.add('is-invalid');
-		document.querySelector('#comm-length').classList.replace('text-muted', 'text-danger');
+		$('#input').classList.add('is-invalid');
+		$('#comm-length').classList.replace('text-muted', 'text-danger');
 	} else {
-		document.querySelector('#input').classList.remove('is-invalid');
-		document.querySelector('#comm-length').classList.replace('text-danger', 'text-muted');
+		$('#input').classList.remove('is-invalid');
+		$('#comm-length').classList.replace('text-danger', 'text-muted');
 	}
 };
 
 Subject.subs(lengthUpdate);
 Subject.subs(validation);
 
-document.querySelector('#input').addEventListener('keyup', e => {
+$('#input').addEventListener('keyup', e => {
 	Subject.notify(e.target.value);
 	e.preventDefault();
-})
+});
