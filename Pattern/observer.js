@@ -31,4 +31,6 @@ const subs1 = function() {
 
 const subject = new Subject();
 subject.subscribe(subs1);
+subject.subscribe(subs2);
+subject.unsubscribe(subs1);
 subject.notify();
