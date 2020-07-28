@@ -41,3 +41,5 @@ Sal.send('Hi too', Jul);
 
 // mediator pattern digunakan ketika banyak instance object saling berinteraksi / complex logic, diperlukan sebuah mediator sebagai central controller untuk memudahkan dalam memaintain codebase
 // dalam hal ini, Chatroom obj menjadi mediator ketika banyak instance user saling berinteraksi
+// User melakukan send -> daripada send langsung ke object user, mediator akan menanganinya, sehingga send method user akan memanggil method lain di mediator
+// sementara method receive pada dasarnya, mediator memberikan informasi ke user obj bersangkutan, daripada user memanggil method pada Mediator, lebih baik Mediator memanggil method yg ada pada user (memberikan data/info)
